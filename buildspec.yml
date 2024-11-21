@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
       - echo "Pushing the Docker image to ECR..."
-      - docker push $REPOSITORY_URI:latest
+      - docker push 499250238649.dkr.ecr.us-east-1.amazonaws.com/php-app-repo:latest
       - echo "Creating imagedefinitions.json..."
       - printf '[{"name":"php-container","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
 artifacts:
